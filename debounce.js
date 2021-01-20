@@ -1,5 +1,5 @@
 /**
- * 防抖
+ * 防抖： 管事件触发频率多高，一定在事件触发 n 秒后才执行，如果在一个事件执行的 n秒内又触发了这个事件，就以新的事件的时间为准
  * @callback fn  -被调用的函数 
  * @param {number} [wait = 300] -定时器时间  
  * @param {boolean} [immediate = false] -是否要立即执行一次  
@@ -8,11 +8,11 @@ export function debounce(fn, wait = 300, immediate = false) {
 
     // 参数验证
     if (typeof fn != 'function')
-        throw new Error("第一个参数必须是函数!");
+        throw Error("第一个参数必须是函数!");
     if (typeof wait != 'number')
-        throw new Error("第二个参数必须是数字!");
+        throw Error("第二个参数必须是数字!");
     if (typeof immediate != 'boolean')
-        throw new Error("第三个参数必须是布尔值!");
+        throw Error("第三个参数必须是布尔值!");
 
     let timer = null;
 
@@ -34,7 +34,7 @@ export function debounce(fn, wait = 300, immediate = false) {
 }
 
 // js使用方法
-// window.addEventListener('resize', debounce(handleResize, 200));
+// window.addEventListener('resize', debounce(function() {}, 200));
 
 // vue使用方法
-// mehtod: debounce(handleResize, 200)
+// mehtod: debounce(function() {}, 200)
