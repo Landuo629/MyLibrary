@@ -6,3 +6,6 @@ from './throttle.js'; // 节流
 
 export { compare }
 from './compare.js'; // Array<object> 比较
+
+export { shuffle }
+from './shuffle.js'; // 数组乱序 - 洗牌算法
