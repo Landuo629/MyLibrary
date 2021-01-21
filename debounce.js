@@ -3,6 +3,7 @@
  * @callback fn  -被调用的函数 
  * @param {number} [wait = 300] -定时器时间  
  * @param {boolean} [immediate = false] -是否要立即执行一次  
+ * @return {function}
  */
 export function debounce(fn, wait = 300, immediate = false) {
 

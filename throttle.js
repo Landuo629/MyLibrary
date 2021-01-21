@@ -3,6 +3,7 @@
  * 第一次事件和最后一次事件都触发
  * @callback fn  -被调用的函数 
  * @param {number} [wait = 300] -定时器时间  
+ * @return {function}
  */
 
 export function throttle(fn, wait = 300) {
