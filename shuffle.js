@@ -1,6 +1,6 @@
 /**
  * 数组乱序 - 洗牌算法：从最后一个元素开始，从数组中随机选出一个位置，交换，直到第一个元素。
- * @param {array} -数组
+ * @param {array} 
  * @return {array}   
  */
 export function shuffle(array) {
