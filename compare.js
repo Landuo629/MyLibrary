@@ -4,12 +4,11 @@
  * @param {boolean} [reverse = true] true 升序 false 降序
  * @return {function}
  */
+import verification from './verification.js';
 export function compare(property, reverse = true) {
     // 参数验证
-    if (typeof property != 'string')
-        throw Error("第一个参数必须是字符串!");
-    if (typeof reverse != 'boolean')
-        throw Error("第二个参数必须是布尔值!");
+    verification.isString(property);
+    verification.isBoolean(reverse);
 
     return function(x, y) {
         let value1 = x[property];

@@ -244,7 +244,7 @@ export function validatenumord(num, type) {
 }
 
 /**
- * 判断是否为空
+ * 判断是否为假
  */
 export function validatenull(val) {
     if (typeof val === 'boolean') {

@@ -5,14 +5,12 @@
  * @param {number} [wait = 300] -定时器时间  
  * @return {function}
  */
-
+import verification from './verification.js';
 export function throttle(fn, wait = 300) {
 
     // 参数验证
-    if (typeof fn != 'function')
-        throw Error("第一个参数必须是函数!");
-    if (typeof wait != 'number')
-        throw Error("第二个参数必须是数字!");
+    verification.isFunction(fn);
+    verification.isNumber(wait);
 
     // 设置一个定时器
     let timer = null;

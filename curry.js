@@ -5,10 +5,10 @@
  * @param {...*}  args
  * @return {function}
  */
+import verification from './verification.js';
 export function curry(fn, ...args) {
     // 参数验证
-    if (typeof fn != 'function')
-        throw Error("第一个参数必须是函数!");
+    verification.isFunction(fn);
 
     return args.length >= fn.length ? fn(...args) : (..._args) => curry(fn, ...args, ..._args);
     /**

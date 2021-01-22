@@ -5,15 +5,13 @@
  * @param {boolean} [immediate = false] -是否要立即执行一次  
  * @return {function}
  */
+import verification from './verification.js';
 export function debounce(fn, wait = 300, immediate = false) {
 
     // 参数验证
-    if (typeof fn != 'function')
-        throw Error("第一个参数必须是函数!");
-    if (typeof wait != 'number')
-        throw Error("第二个参数必须是数字!");
-    if (typeof immediate != 'boolean')
-        throw Error("第三个参数必须是布尔值!");
+    verification.isFunction(fn);
+    verification.isNumber(wait);
+    verification.isBoolean(immediate);
 
     let timer = null;
 

@@ -3,10 +3,10 @@
  * @param {array} 
  * @return {array}   
  */
+import verification from './verification.js';
 export function shuffle(array) {
     // 参数验证
-    if (!Array.isArray(array))
-        throw Error("第一个参数必须是数组!");
+    verification.isArray(array);
 
     let current = array.length - 1;
     while (current > -1) {
