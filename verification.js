@@ -1,3 +1,8 @@
+/**
+ * 验证参数
+ * @param {*} params 需要验证的参数
+ * @return {throw}
+ */
 const verification = {
     isFunction(params) {
         if (typeof params != 'function')

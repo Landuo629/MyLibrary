@@ -1,7 +1,9 @@
 /**
  * 根据数组里对象的某一个值进行排序
  * @param {string} property 用作比较对象的 key 值
- * @param {boolean} [reverse = true] true 升序 false 降序
+ * @param {boolean} [reverse = true] 
+ *  @value {true} 升序
+ *  @value {false} 降序
  * @return {function}
  */
 import verification from './verification.js';
