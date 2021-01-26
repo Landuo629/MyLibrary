@@ -203,7 +203,7 @@ export function validatePhone(phone) {
     }
     list.push(result)
     list.push(msg)
-    return list
+    return list;
 }
 
 /**
