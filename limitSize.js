@@ -16,6 +16,7 @@ export function limitSize(number, Max = Number.MAX_VALUE, Min = -Number.MAX_VALU
     verification.isNumber(number);
     verification.isNumber(Max);
     verification.isNumber(Min);
+    
     if(number >= Max) {
         return Max;
     }else if(number <= Min) {
