@@ -1,7 +1,6 @@
 /**
  * 函数柯里化：只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数
- * @callback fn  -被调用的函数 
- * @param {number} [wait = 300] -定时器时间  
+ * @callback fn  -被调用的函数  
  * @param {...*}  args
  * @return {function}
  */
@@ -18,3 +17,7 @@ export function curry(fn, ...args) {
      * 则继续对当前函数进行柯里化，返回一个接受所有参数（当前参数和剩余参数） 的函数
      */
 }
+
+// 示例
+// const fun = currt(被调用的函数)
+// fun()()();
