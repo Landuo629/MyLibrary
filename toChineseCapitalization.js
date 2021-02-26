@@ -3,7 +3,11 @@
  * @param {number} n - 传入的数字
  * @return {string}   
  */
-function toChineseCapitalization(n) {
+import verification from './verification.js';
+export function toChineseCapitalization(n) {
+    // 参数验证
+    verification.isNumber(n);
+
     const fraction = ['角', '分', '厘'];
     const digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
     const unit = [['元', '万', '亿'], ['', '拾', '佰', '仟']];

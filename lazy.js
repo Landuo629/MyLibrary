@@ -8,6 +8,8 @@ export { shuffle } from './shuffle.js'; // 数组乱序 - 洗牌算法
 
 export { curry } from './curry.js'; // 函数柯里化
 
+export { toChineseCapitalization } from './toChineseCapitalization.js'; // 现金额大写转换函数
+
 export {
     isEmail,
     isMobile,
