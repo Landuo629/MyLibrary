@@ -10,6 +10,8 @@ export { curry } from './curry.js'; // 函数柯里化
 
 export { toChineseCapitalization } from './toChineseCapitalization.js'; // 现金额大写转换函数
 
+export { format } from './date.js'; // 时间格式化
+
 export {
     isEmail,
     isMobile,
