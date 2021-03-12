@@ -9,14 +9,17 @@ import verification from './verification.js';
 export function debounce(fn, wait = 300, immediate = false) {
 
     // 参数验证
-    verification.isFunction(fn);
-    verification.isNumber(wait);
-    verification.isBoolean(immediate);
+    if (!verification.isFunction(fn))
+        throw Error("第一个参数必须传递并且类型为函数");
+    if (!verification.isNumber(wait))
+        throw Error("第二个参数类型必须是数字");
+    if (!verification.isBoolean(immediate))
+        throw Error("第三个参数类型必须是布尔值");
 
     let timer = null;
 
     // 返回一个函数
-    return function() {
+    return function () {
 
         // 是否要立即执行一次
         if (!timer && immediate)
@@ -35,5 +38,5 @@ export function debounce(fn, wait = 300, immediate = false) {
 // js使用方法
 // window.addEventListener('resize', debounce(function() {}, 200));
 
-// vue使用方法
-// mehtod: debounce(function() {}, 200)
+// vue使用方法 method是v-on绑定的方法
+// methods: { method: debounce(function() {}, 200)}

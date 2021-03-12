@@ -6,7 +6,8 @@
 import verification from './verification.js';
 export function shuffle(array) {
     // 参数验证
-    verification.isArray(array);
+    if(!verification.isArray(array))
+        throw Error("第一个参数必须传递并且类型为数组");
 
     let current = array.length - 1;
     while (current > -1) {

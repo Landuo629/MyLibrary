@@ -9,8 +9,10 @@
 import verification from './verification.js';
 export function compare(property, reverse = true) {
     // 参数验证
-    verification.isString(property);
-    verification.isBoolean(reverse);
+    if(!verification.isString(property))
+        throw Error('第一个参数必须必须传递并且类型为字符串');
+    if(!verification.isBoolean(reverse))
+        throw Error('第一个参数必须是布尔值');
 
     return function(x, y) {
         let value1 = x[property];

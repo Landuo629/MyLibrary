@@ -6,7 +6,8 @@
 import verification from './verification.js';
 export function toChineseCapitalization(n) {
     // 参数验证
-    verification.isNumber(n);
+    if (!verification.isNumber(n))
+    throw Error("第一个参数必须传递并且类型为数字");
 
     const fraction = ['角', '分', '厘'];
     const digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];

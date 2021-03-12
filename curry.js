@@ -7,7 +7,8 @@
 import verification from './verification.js';
 export function curry(fn, ...args) {
     // 参数验证
-    verification.isFunction(fn);
+    if(!verification.isFunction(fn))
+        throw Error('第一个参数必须传递并且类型为函数');
 
     return args.length >= fn.length ? fn(...args) : (..._args) => curry(fn, ...args, ..._args);
     /**

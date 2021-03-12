@@ -11,7 +11,8 @@
 import verification from './verification.js';
 export function format(fmt = 'yyyy-MM-dd hh:mm:ss') {
     // 参数验证
-    verification.isString(fmt);
+    if(!verification.isString(fmt))
+        throw Error("第一个参数类型必须是字符串");
 
     const date = new Date();
     const dateList = {
