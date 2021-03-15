@@ -15,14 +15,6 @@ export { format } from './date.js'; // 时间格式化
 export { verification } from './verification.js'; // 参数类型验证
 
 export {
-    isEmail,
-    isMobile,
-    isPhone,
-    isURL,
-    isvalidUsername,
-    validateURL,
-    validateLowerCase,
-    validatAlphabets,
     vaildatePc,
     validateEmail,
     cardid,

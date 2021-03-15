@@ -1,75 +1,104 @@
 /**
  * 验证参数
  * @param {*} params 需要验证的参数
- * @return {throw}
+ * @return {Boolean}
  */
 const verification = {
-    isString(params) { //是否字符串
-        return Object.prototype.toString.call(params).slice(8, -1) === 'String'
+    isString(params) { //字符串
+        return _typeof(params) === 'String'
     },
 
-    isNumber(params) { //是否数字
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Number'
+    isNumber(params) { //数字
+        return _typeof(params) === 'Number'
     },
 
-    isBoolean(params) { //是否boolean
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Boolean'
+    isBoolean(params) { //Boolean
+        return _typeof(params) === 'Boolean'
     },
 
-    isFunction(params) { //是否函数
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Function'
+    isFunction(params) { //函数
+        return _typeof(params) === 'Function'
     },
 
-    isNull(params) { //是否为null
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Null'
+    isNull(params) { //null
+        return _typeof(params) === 'Null'
     },
 
-    isUndefined(params) { //是否undefined
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Undefined'
+    isUndefined(params) { //undefined
+        return _typeof(params) === 'Undefined'
     },
 
-    isObj(params) { //是否对象
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Object'
+    isObj(params) { //对象
+        return _typeof(params) === 'Object'
     },
 
-    isArray(params) { //是否数组
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Array'
+    isArray(params) { //数组
+        return _typeof(params) === 'Array'
     },
 
-    isDate(params) { //是否时间
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Date'
+    isDate(params) { //时间
+        return _typeof(params) === 'Date'
     },
 
-    isRegExp(params) { //是否正则
-        return Object.prototype.toString.call(params).slice(8, -1) === 'RegExp'
+    isRegExp(params) { //正则
+        return _typeof(params) === 'RegExp'
     },
 
-    isError(params) { //是否错误对象
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Error'
+    isError(params) { //错误对象
+        return _typeof(params) === 'Error'
     },
 
-    isSymbol(params) { //是否Symbol函数
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Symbol'
+    isSymbol(params) { //Symbol函数
+        return _typeof(params) === 'Symbol'
     },
 
-    isPromise(params) { //是否Promise对象
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Promise'
+    isPromise(params) { //Promise对象
+        return _typeof(params) === 'Promise'
     },
 
-    isSet(params) { //是否Set对象
-        return Object.prototype.toString.call(params).slice(8, -1) === 'Set'
+    isSet(params) { //Set对象
+        return _typeof(params) === 'Set'
     },
 
-    isFalse(params) {
+    isFalse(params) { // False
         if (!o || o === 'null' || o === 'undefined' || o === 'false' || o === 'NaN') return true
         return false
     },
 
-    isTrue(params) {
+    isTrue(params) { //True
         return !this.isFalse(params)
     },
 
-    isIos() {
+    isEmail(params) { //邮箱
+        return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(params);
+    },
+
+    isMobile(params) { //电话号码
+        return /^1[0-9]{10}$/.test(params)
+    },
+
+    isPhone(params) { //手机号码
+        return /^([0-9]{3,4}-)?[0-9]{7,8}$/.test(params)
+    },
+
+    isURL(URL) { //URL地址
+        return /^http[s]?:\/\/.*/.test(URL)
+    },
+
+
+    validateLowerCase(str) { // 小写字母 
+        return /^[a-z]+$/.test(str)
+    },
+
+    validateUpperCase(str) { // 大写字母 
+        return /^[A-Z]+$/.test(str)
+    },
+
+    validatAlphabets(str) { // 大小写字母 
+        return /^[A-Za-z]+$/.test(str)
+    },
+
+    isIos() { // ios or 安卓
         var u = navigator.userAgent;
         if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
             // return "Android";
@@ -88,7 +117,7 @@ const verification = {
         }
     },
 
-    isPC() { //是否为PC端
+    isPC() { //为PC端
         var userAgentInfo = navigator.userAgent;
         var Agents = ["Android", "iPhone",
             "SymbianOS", "Windows Phone",
@@ -102,6 +131,14 @@ const verification = {
         }
         return flag;
     }
+}
+
+/**
+ * @param {*} params 需要验证的参数
+ * @return {String}
+ */
+function _typeof(params) {
+    return Object.prototype.toString.call(params).slice(8, -1)
 }
 
 export default verification;
